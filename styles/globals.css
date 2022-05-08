@@ -1,5 +1,5 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Manrope");
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 
 html,
 body {
-  /* background: linear-gradient(15.74deg, rgba(46, 45, 102, 0.6) -2.5%, rgba(58, 39, 63, 0.6) 47.55%, #181818 90.7%); */
+  /* font-family:'Manrope'; */
  background-color: #0D0D0D;
 }
 .navbar-bg-gridiant{
