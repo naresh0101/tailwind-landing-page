@@ -5,7 +5,7 @@ export default function Footer() {
         <div>
             <footer>
                 <section className="text-white body-font">
-                    <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+                    <div className="container mx-auto flex px-5 py-16 items-center justify-center flex-col">
                         <img
                             className="object-contain h-24 w-64"
                             src={FooterImage?.src}

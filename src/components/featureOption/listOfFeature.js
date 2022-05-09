@@ -1,9 +1,9 @@
-import { Disclosure } from '@headlessui/react'
+import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/solid'
 
 
 export default function ListOfFeature(props) {
-    let { demoData } = props
+    let { demoData, setSelectedItem } = props
     return (
         <Disclosure as="div" className="mt-2">
             {({ open }) => (
@@ -23,26 +23,37 @@ export default function ListOfFeature(props) {
                                 } h-5 w-5 text-white-500`}
                         />
                     </Disclosure.Button>
-                    <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-white">
-                        <div className='w-full overflow-auto	h-96'>
-                            <div className="grid grid-cols-3 gap-4">
-                                {
-                                    demoData?.map((item, i) => {
-                                        return (
-                                            <button key={i} className='rounded bg-black hover:text-white-500 :bg-gray focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500'>
-                                                <div className="p-3 text-center">
-                                                    <p className='text-gray-500'><small>{item?.title}</small></p>
-                                                    <p className='text-whitte font-bold'>{item?.name}</p>
-                                                    <p className='text-gray-500'><small>{item?.perc}</small></p>
-                                                </div>
-                                            </button>
-                                        )
-                                    })
-                                }
+                    <Transition
+                        enter="transition duration-1000 ease-out"
+                        enterFrom="transform scale-95 opacity-0"
+                        enterTo="transform scale-1000 opacity-1000"
+                        leave="transition duration-75 ease-out"
+                        leaveFrom="transform scale-1000 opacity-1000"
+                        leaveTo="transform scale-95 opacity-0"
+                    >
+                        <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-white">
+                            <div className='w-full overflow-auto h-64 sm:pr-4'>
+                                <div className="grid grid-cols-3 gap-4">
+                                    {
+                                        demoData?.map((item, i) => {
+                                            return (
+                                                <button onClick={() => { setSelectedItem(item) }} key={i} className='rounded bg-black hover:text-white-500 :bg-gray focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500'>
+                                                    <div className="p-3 text-center">
+                                                        <p className='text-gray-500'><small>{item?.title}</small></p>
+                                                        <h2 className='text-whitte font-bold'>{item?.name}</h2>
+                                                        <p className='text-gray-500'><small>{item?.perc}</small></p>
+                                                    </div>
+                                                </button>
+                                            )
+                                        })
+                                    }
+                                </div>
                             </div>
-                        </div>
 
-                    </Disclosure.Panel>
+                        </Disclosure.Panel>
+                    </Transition>
+
+
                 </>
             )}
         </Disclosure>
