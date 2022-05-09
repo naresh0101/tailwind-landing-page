@@ -24,7 +24,24 @@ export default function ListOfFeature(props) {
                         />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-white">
-                        {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. */}
+                        <div className='w-full overflow-auto	h-96'>
+                            <div className="grid grid-cols-3 gap-4">
+                                {
+                                    demoData?.map((item, i) => {
+                                        return (
+                                            <button key={i} className='rounded bg-black hover:text-white-500 :bg-gray focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500'>
+                                                <div className="p-3 text-center">
+                                                    <p className='text-gray-500'><small>{item?.title}</small></p>
+                                                    <p className='text-whitte font-bold'>{item?.name}</p>
+                                                    <p className='text-gray-500'><small>{item?.perc}</small></p>
+                                                </div>
+                                            </button>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+
                     </Disclosure.Panel>
                 </>
             )}

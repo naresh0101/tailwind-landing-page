@@ -8,7 +8,7 @@ export default function HomeLayout() {
     return (
         <>
             <Navbar />
-            <div className={homeModuleStyle.homelayout}>
+            <div className={`mx-1 ${homeModuleStyle.homelayout}`}>
                 <HomeBanner />
                 <HomeHeroInto />
                 <FeatureOption />
