@@ -6,6 +6,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   margin: 0;
   font-family: 'Manrope';
   background: linear-gradient(0deg, #0D0D0D, #0D0D0D), #141417;
